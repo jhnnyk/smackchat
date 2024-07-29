@@ -18,11 +18,11 @@
 
       <q-tab-panels v-model="tab" animated>
         <q-tab-panel name="login">
-          <h5>Login</h5>
+          <LoginRegister :tab="tab" />
         </q-tab-panel>
 
         <q-tab-panel name="register">
-          <h5>Register</h5>
+          <LoginRegister :tab="tab" />
         </q-tab-panel>
       </q-tab-panels>
     </q-card>
@@ -31,6 +31,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import LoginRegister from 'src/components/LoginRegister.vue'
 
 const tab = ref('login')
 </script>
