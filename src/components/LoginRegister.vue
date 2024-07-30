@@ -30,8 +30,10 @@
 
 <script setup>
 import { reactive } from 'vue'
+import { useStore } from 'src/stores/store'
 
 const props = defineProps({ tab: String })
+const store = useStore()
 
 const formData = reactive({
   name: '',
@@ -43,7 +45,7 @@ const submitForm = () => {
   if (props.tab == 'login') {
     console.log('login the user')
   } else {
-    console.log('register the user')
+    store.registerUser(formData)
   }
 }
 </script>
